@@ -35,6 +35,12 @@ fi
 
 
 curl -o hello.tar.gz $official_package_location
+if [ $? -eq 0 ]; then
+    echo OK
+else
+    echo "Installation failed. Curl not found or not installed"
+    exit
+fi
 echo "Installed the tarball from official source"
 
 tar -xvzf hello.tar.gz
